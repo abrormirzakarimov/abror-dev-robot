@@ -1,9 +1,10 @@
-from aiogram import Dispatcher
-
 from loader import dp
-# from .is_admin import AdminFilter
+from .admins import AdminFilter
+from .group_filter import isGroup
+from .private_chat import isPravite
 
 
 if __name__ == "filters":
-    #dp.filters_factory.bind(is_admin)
-    pass
+    dp.filters_factory.bind(AdminFilter)
+    dp.filters_factory.bind(isGroup)
+    dp.filters_factory.bind(isPravite)
